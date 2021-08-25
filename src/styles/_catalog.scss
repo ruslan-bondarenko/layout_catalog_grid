@@ -1,22 +1,36 @@
 .catalog {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-
+  grid-template-columns: 100%;
+  gap: 48px;
   max-width: 944px;
   margin: 0 auto;
 
   &__card {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     width: 200px;
     height: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 48px;
   }
+}
 
-  &__card:not(:nth-child(4n)) {
-    margin-right: 48px;
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 33.3%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 25%);
   }
 }
